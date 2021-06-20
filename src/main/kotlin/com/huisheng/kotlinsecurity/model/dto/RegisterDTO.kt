@@ -1,4 +1,4 @@
-package com.huisheng.kotlinsecurity.dtos
+package com.huisheng.kotlinsecurity.model.dto
 
 class RegisterDTO {
     val name = ""

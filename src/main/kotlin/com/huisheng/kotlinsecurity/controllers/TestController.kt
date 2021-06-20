@@ -4,6 +4,9 @@ import com.huisheng.kotlinsecurity.entity.UserAccount
 import com.huisheng.kotlinsecurity.repository.UserRepository
 import io.swagger.annotations.Api
 import mu.KotlinLogging
+import org.springframework.security.core.Authentication
+import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.web.bind.annotation.GetMapping
 
 import org.springframework.web.bind.annotation.RequestMapping
 
@@ -14,7 +17,7 @@ import java.security.Principal
 @RestController
 @RequestMapping("/test")
 @Api(tags = ["test"])
-class HelloController(private val userRepository: UserRepository) {
+class TestController(private val userRepository: UserRepository) {
 
     private val logger = KotlinLogging.logger { }
 
@@ -24,4 +27,10 @@ class HelloController(private val userRepository: UserRepository) {
         return "Hello " + userAccount?.username
     }
 
+    @GetMapping("/test")
+    fun test(): String? {
+        val authentication: Authentication = SecurityContextHolder.getContext().authentication
+        logger.info { authentication.toString() }
+        return "认证通过"
+    }
 }

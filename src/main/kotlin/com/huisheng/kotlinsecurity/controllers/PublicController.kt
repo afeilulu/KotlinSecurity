@@ -1,6 +1,6 @@
 package com.huisheng.kotlinsecurity.controllers
 
-import com.huisheng.kotlinsecurity.dtos.RegisterDTO
+import com.huisheng.kotlinsecurity.model.dto.RegisterDTO
 import com.huisheng.kotlinsecurity.entity.UserAccount
 import com.huisheng.kotlinsecurity.repository.RoleRepository
 import com.huisheng.kotlinsecurity.repository.UserRepository
