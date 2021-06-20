@@ -1,0 +1,32 @@
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    url: jdbc:postgresql://rancher.huishengedu.cn:15432/account?useSSL=false
+    username: postgres
+    password: Huisheng2021
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      max-lifetime: 1800000
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+        enable_lazy_load_no_trans: true
+    show-sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB
