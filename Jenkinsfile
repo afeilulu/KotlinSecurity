@@ -42,7 +42,7 @@ pipeline {
   environment {
     CODING_DOCKER_REG_HOST = "${CCI_CURRENT_TEAM}-docker.pkg.${CCI_CURRENT_DOMAIN}"
     CODING_DOCKER_IMAGE_NAME = "${PROJECT_NAME.toLowerCase()}/${DOCKER_REPO_NAME}/${DOCKER_IMAGE_NAME}"
-    DEPLOY_API = "https://39.103.176.179:8443/v3/project/c-sj4mb:p-7pdtp/workloads/deployment:backend:xbt-platform-salary-service?action=redeploy"
+    DEPLOY_API = "https://rancher.huishengedu.cn:8443/v3/project/c-xt75l:p-9m4zp/workloads/deployment:backend:kotlin-security-service?action=redeploy"
     DEPLOY_SECRET = "token-s9r49:r2z82nfflx6kp8ghvl7zclt255sv5tqnz5s5lf7zfk2b5h52chvnsr"
   }
 }
