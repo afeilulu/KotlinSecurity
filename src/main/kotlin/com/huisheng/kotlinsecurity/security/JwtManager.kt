@@ -20,7 +20,7 @@ class JwtManager {
     private val secretKey: String? = null
 
     /**
-     * 过期时间目前设置成2天，这个配置随业务需求而定
+     * 过期时间目前设置成1天，这个配置随业务需求而定
      */
     private val expiration: Duration = Duration.ofDays(1)
 

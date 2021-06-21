@@ -31,6 +31,8 @@ spring:
       max-file-size: 1000MB
       max-request-size: 1000MB
 
+jwt:
+  token: huisheng-jwt
 security:
   jwt:
-    secretKey: whatever
+    secretKey: huisheng-secretKey
