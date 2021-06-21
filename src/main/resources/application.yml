@@ -36,3 +36,6 @@ jwt:
 security:
   jwt:
     secretKey: huisheng-secretKey
+
+server:
+  port: 10001
