@@ -41,7 +41,7 @@ class AuthController(
     @PostMapping("register")
     @ApiOperation(value = "注册", notes = "")
     fun register(@RequestBody body: RegisterDTO): ResponseEntity<UserAccount> {
-        return ResponseEntity.ok(userRepository.save(UserAccount(body.name, body.pw, listOf(roleRepository.findByRole("ROLE_STUDENT")!!), true)))
+        return ResponseEntity.ok(userRepository.save(UserAccount(body.username, body.password, listOf(roleRepository.findByRole("ROLE_STUDENT")!!), true)))
     }
 
     @PostMapping("login")
