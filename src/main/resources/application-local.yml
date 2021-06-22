@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres.backend.svc.cluster.local:5432/account?useSSL=false
+    url: jdbc:postgresql://rancher.huishengedu.cn:15432/account?useSSL=false
     username: postgres
     password: Huisheng2021
     driver-class-name: org.postgresql.Driver
@@ -8,4 +8,4 @@ spring:
       max-lifetime: 1800000
 
 server:
-  port: 10001
+  port: 8080
