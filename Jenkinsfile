@@ -13,7 +13,7 @@ pipeline {
     }
    stage('编译') {
                   steps {
-                    sh 'mvn clean package'
+                    sh 'mvn clean package -Plocal'
                   }
                  }
     stage('构建镜像并推送到 CODING Docker 制品库') {

@@ -1,3 +1,5 @@
+spring.profiles.active: @env@
+
 spring:
   devtools:
     livereload:
@@ -7,13 +9,6 @@ spring:
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
-  datasource:
-    url: jdbc:postgresql://rancher.huishengedu.cn:15432/account?useSSL=false
-    username: postgres
-    password: Huisheng2021
-    driver-class-name: org.postgresql.Driver
-    hikari:
-      max-lifetime: 1800000
   jpa:
     open-in-view: true
     hibernate:
@@ -37,5 +32,3 @@ security:
   jwt:
     secretKey: huisheng-secretKey
 
-server:
-  port: 8080
