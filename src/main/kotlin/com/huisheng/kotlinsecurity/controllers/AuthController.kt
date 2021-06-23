@@ -1,6 +1,6 @@
 package com.huisheng.kotlinsecurity.controllers
 
-import com.huisheng.kotlinsecurity.entity.UserAccount
+import com.huisheng.kotlinsecurity.model.entity.UserAccount
 import com.huisheng.kotlinsecurity.enums.ResultCode
 import com.huisheng.kotlinsecurity.exception.ApiException
 import com.huisheng.kotlinsecurity.model.dto.LoginDTO
@@ -15,7 +15,6 @@ import io.swagger.annotations.ApiOperation
 import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.ResponseEntity
-import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*

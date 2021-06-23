@@ -1,6 +1,6 @@
 package com.huisheng.kotlinsecurity.security
 
-import com.huisheng.kotlinsecurity.entity.UserAccount
+import com.huisheng.kotlinsecurity.model.entity.UserAccount
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails

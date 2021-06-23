@@ -1,7 +1,7 @@
 package com.huisheng.kotlinsecurity.repository
 
-import com.huisheng.kotlinsecurity.entity.UserAccount
-import com.huisheng.kotlinsecurity.entity.UserRole
+import com.huisheng.kotlinsecurity.model.entity.UserAccount
+import com.huisheng.kotlinsecurity.model.entity.UserRole
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.querydsl.QuerydslPredicateExecutor
 import org.springframework.stereotype.Repository

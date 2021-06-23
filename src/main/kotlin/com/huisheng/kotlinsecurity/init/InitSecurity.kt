@@ -1,7 +1,7 @@
 package com.huisheng.kotlinsecurity.init
 
-import com.huisheng.kotlinsecurity.entity.UserAccount
-import com.huisheng.kotlinsecurity.entity.UserRole
+import com.huisheng.kotlinsecurity.model.entity.UserAccount
+import com.huisheng.kotlinsecurity.model.entity.UserRole
 import com.huisheng.kotlinsecurity.repository.RoleRepository
 import com.huisheng.kotlinsecurity.repository.UserRepository
 import com.huisheng.kotlinsecurity.security.CustomUserDetails
@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.core.Ordered
 import org.springframework.security.core.userdetails.User
-import org.springframework.security.provisioning.InMemoryUserDetailsManager
 import org.springframework.stereotype.Component
 
 @Component

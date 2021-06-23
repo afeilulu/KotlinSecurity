@@ -1,9 +1,8 @@
-package com.huisheng.kotlinsecurity.entity
+package com.huisheng.kotlinsecurity.model.entity
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import lombok.Data
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
-import org.springframework.security.crypto.password.PasswordEncoder
 import javax.persistence.*
 
 

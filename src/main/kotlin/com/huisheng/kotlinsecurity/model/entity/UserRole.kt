@@ -1,4 +1,4 @@
-package com.huisheng.kotlinsecurity.entity
+package com.huisheng.kotlinsecurity.model.entity
 
 import lombok.Data
 import javax.persistence.*
