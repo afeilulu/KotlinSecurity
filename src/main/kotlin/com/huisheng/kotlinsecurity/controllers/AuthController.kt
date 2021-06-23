@@ -5,6 +5,8 @@ import com.huisheng.kotlinsecurity.enums.ResultCode
 import com.huisheng.kotlinsecurity.exception.ApiException
 import com.huisheng.kotlinsecurity.model.dto.LoginDTO
 import com.huisheng.kotlinsecurity.model.dto.RegisterDTO
+import com.huisheng.kotlinsecurity.model.entity.QUserAccount
+import com.huisheng.kotlinsecurity.model.entity.UserRole
 import com.huisheng.kotlinsecurity.model.vo.ResultVO
 import com.huisheng.kotlinsecurity.model.vo.UserVO
 import com.huisheng.kotlinsecurity.repository.RoleRepository
@@ -40,7 +42,12 @@ class AuthController(
     @PostMapping("register")
     @ApiOperation(value = "注册", notes = "")
     fun register(@RequestBody body: RegisterDTO): ResponseEntity<UserAccount> {
-        return ResponseEntity.ok(userRepository.save(UserAccount(body.username, body.password, listOf(roleRepository.findByRole("ROLE_STUDENT")!!), true)))
+
+        if (userRepository.exists(QUserAccount.userAccount.username.eq(body.username))) {
+            throw ApiException("用户名已存在")
+        }
+
+        return ResponseEntity.ok(userRepository.save(UserAccount(body.username, body.password, listOf(roleRepository.save(UserRole("ROLE_STUDENT"))), true)))
     }
 
     @PostMapping("login")
