@@ -1,8 +1,5 @@
 package com.huisheng.kotlinsecurity.enums
 
-import lombok.Getter
-
-@Getter
 enum class ResultCode(val code: Int, val msg: String) {
 
     SUCCESS(1000, "操作成功"),

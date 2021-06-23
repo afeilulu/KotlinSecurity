@@ -1,5 +1,7 @@
 package com.huisheng.kotlinsecurity.init
 
+import com.huisheng.kotlinsecurity.enums.Role
+import com.huisheng.kotlinsecurity.model.entity.QUserAccount
 import com.huisheng.kotlinsecurity.model.entity.UserAccount
 import com.huisheng.kotlinsecurity.model.entity.UserRole
 import com.huisheng.kotlinsecurity.repository.RoleRepository
@@ -23,34 +25,10 @@ class InitSecurity : CommandLineRunner, Ordered {
     lateinit var roleRepository: RoleRepository
 
     override fun run(vararg args: String?) {
-        var roleAdmin = roleRepository.findByRole("ROLE_ADMIN")
-        if (roleAdmin == null) {
-            roleAdmin = roleRepository.save(UserRole("ROLE_ADMIN"))
-        }
-        var role = roleRepository.findByRole("ROLE_SCHOOL")
-        if (role == null) {
-            roleRepository.save(UserRole("ROLE_SCHOOL"))
-        }
-        role = roleRepository.findByRole("ROLE_TEACHER")
-        if (role == null) {
-            roleRepository.save(UserRole("ROLE_TEACHER"))
-        }
-        role = roleRepository.findByRole("ROLE_STUDENT")
-        if (role == null) {
-            roleRepository.save(UserRole("ROLE_STUDENT"))
-        }
 
-        var userAdmin = userRepository.findOneByUsername("admin")
-        if (userAdmin == null) {
-            userAdmin = UserAccount("admin","password",null,true)
-            userAdmin = userRepository.save(userAdmin)
+        if (!userRepository.exists(QUserAccount.userAccount.username.eq("admin"))){
+            userRepository.save(UserAccount("admin","password", listOf(roleRepository.save(UserRole(Role.ROLE_ADMIN.name))),true))
         }
-        if (userAdmin.userRoles == null) {
-            userAdmin.userRoles = listOf(roleAdmin)
-            userRepository.save(userAdmin)
-            User.withUserDetails(CustomUserDetails(userAdmin)).roles("ADMIN")
-        }
-
 
     }
 
