@@ -42,7 +42,7 @@ pipeline {
   environment {
     CODING_DOCKER_REG_HOST = "${CCI_CURRENT_TEAM}-docker.pkg.${CCI_CURRENT_DOMAIN}"
     CODING_DOCKER_IMAGE_NAME = "${PROJECT_NAME.toLowerCase()}/${DOCKER_REPO_NAME}/${DOCKER_IMAGE_NAME}"
-    DEPLOY_API = "https://rancher.huishengedu.cn:8443/v3/project/c-xt75l:p-9m4zp/workloads/deployment:backend:kotlin-security-service?action=redeploy"
-    DEPLOY_SECRET = "token-wx4xn:ppcrnvkf6cxrs5jrrjxqfrjkqz95cx56jvx7vhf782dtg77hnrxw4j"
+    DEPLOY_API = "api url"
+    DEPLOY_SECRET = "rancher token"
   }
 }
